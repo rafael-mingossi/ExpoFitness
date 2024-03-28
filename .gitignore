@@ -29,7 +29,12 @@ yarn-error.*
 *.pem
 
 # local env files
+.env
 .env*.local
 
 # typescript
 *.tsbuildinfo
+
+#API
+/api/config.yaml
+api/config.yaml
