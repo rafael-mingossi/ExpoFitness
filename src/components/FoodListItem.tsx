@@ -1,12 +1,20 @@
 import { Alert, StyleSheet, Text, View } from "react-native";
 import { Feather } from "@expo/vector-icons";
 
-const FoodListItem = () => {
+type ListItemProps = {
+  label: string;
+  cal: number;
+  brand: string;
+};
+
+const FoodListItem = ({ label, cal, brand }: ListItemProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.textWrapper}>
-        <Text style={styles.txt1}>Pizza</Text>
-        <Text style={styles.txt2}>300 cal, Domino</Text>
+        <Text style={styles.txt1}>{label}</Text>
+        <Text style={styles.txt2}>
+          {cal} cal, {brand}
+        </Text>
       </View>
       <Feather
         name="plus-circle"
