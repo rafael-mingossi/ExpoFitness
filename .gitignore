@@ -37,3 +37,4 @@ yarn-error.*
 
 #API
 /api/config.yaml
+api/config.yaml
