@@ -2,18 +2,25 @@ import { Alert, StyleSheet, Text, View } from "react-native";
 import { Feather } from "@expo/vector-icons";
 
 type ListItemProps = {
-  label: string;
-  cal: number;
-  brand: string;
+  item: {
+    food: {
+      label: string;
+      brand: string;
+      nutrients: {
+        ENERC_KCAL: number;
+      };
+    };
+  };
 };
 
-const FoodListItem = ({ label, cal, brand }: ListItemProps) => {
+const FoodListItem = ({ item }: ListItemProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.textWrapper}>
-        <Text style={styles.txt1}>{label}</Text>
+        <Text style={styles.txt1}>{item.food.label}</Text>
         <Text style={styles.txt2}>
-          {cal} cal, {brand}
+          {item.food.nutrients.ENERC_KCAL} cal,{" "}
+          {!item.food.brand ? "No Brand" : item.food.brand}
         </Text>
       </View>
       <Feather
